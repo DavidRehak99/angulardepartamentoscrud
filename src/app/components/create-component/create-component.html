@@ -1,5 +1,6 @@
 <h1>Create Component</h1>
-<form createform="ngForm">
+<h2 style="color: blue;">{{mensaje}}</h2>
+<form createform="ngForm" >
     <label>Id Departamento</label>
     <input type ="number" name="cajaid" #cajaid class="form-control">
 
@@ -8,5 +9,5 @@
 
     <label>Localidad</label>
     <input type ="text" name="cajaid" #cajalocalidad class="form-control">
-    <button class="btn-info">New</button>
+    <button (click)="insertDepartamento()" class="btn-info">New</button>
 </form>

@@ -23,4 +23,20 @@ export class ServiceDepartamentos {
         return firstValueFrom(this._http.post(this.url + request, json, {headers: header}))
 
     }
+    async findDepartamentosAsync(id:number): Promise<departamento>{
+        let request ="api/departamentos/"+ id;
+        return firstValueFrom(this._http.get<departamento>(this.url + request));
+    }
+
+    async updateDepartamentosAsync(departamento:departamento): Promise<any>{
+        let json =JSON.stringify(departamento);
+        let header = new HttpHeaders().set("content-type", "application/json");
+        let request = "api/departamentos";
+        return firstValueFrom(this._http.put(this.url + request,json,{headers:header}));
+    }
+
+    async deleteDepartamentosAsync(id: number): Promise<any>{
+        let request = "api/departamentos/" + id;
+        return firstValueFrom(this._http.delete(this.url + request))
+    }
 }
