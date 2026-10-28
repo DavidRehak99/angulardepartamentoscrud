@@ -1,0 +1,22 @@
+<h1>Homecomponent</h1>
+<table>
+    <thead>
+    <tr>
+    <th>Id Departamento</th>
+    <th>Nombre</th>
+    <th>Localidad</th>
+    </tr>
+    </thead>
+    <tbody>
+        @for (dept of departamentos; track dept){
+
+            <tr>
+            <td>{{dept.numero}}</td>
+            <td>{{dept.nombre}}</td>
+            <td>{{dept.localidad}}</td>
+            </tr>
+
+        }
+    
+    </tbody>
+</table>
